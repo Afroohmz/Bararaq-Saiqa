@@ -1,26 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Weather Dashboard</h1>
-    <form id="searchForm">
-      <input type="text" id="cityInput" placeholder="Enter city name">
-      <button type="submit">Search</button>
-    </form>
-  </header>
-  <main>
-    <section id="currentWeather"></section>
-    <section id="forecast"></section>
-    <section id="searchHistory"></section>
-  </main>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+</head>
+
+<body>
+    <section class="hero bg-snow mb-5 font-sans">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title text-black font-serif">Weather Dashboard</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="info-section" class="mt-5 pt-5">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="content">
+                    <form>
+                        <input id="city-input" class="input is-info w-full border rounded-lg py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                            type="text" placeholder="Please enter the name of the city" />
+                        <br>
+                        <button id="submit" class="button is-info w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            type="submit">Search
+                        </button>
+                    </form>
+
+                    <div class="box table-box bg-gray-300 mt-4">
+                        <div class="table-container">
+                            <table id="cityList" class="table is-bordered">
+                                <tr></tr>
+                                <!--I have generated the table in my JavaScript-->
+                            </table>
+                            <button id="clr-btn" class="button is-danger is-rounded">CLEAR/RESET</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2">
+                    <div id="weather-data" class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-skyblue p-4 rounded-lg shadow-lg">
+                        <div class="current-city-data min-h-72 bg-skyblue">
+                            <h2 id="city-name"></h2>
+                            <h3 id="temp"></h3>
+                            <h3 id="high"></h3>
+                            <h3 id="humidity"></h3>
+                            <h3 id="wind-speed"></h3>
+                            <h3 id="uv-index"></h3>
+                            <h3 id="city-cond"></h3>
+                        </div>
+                        <div>
+                            <div id="icon"></div>
+                        </div>
+                    </div>
+
+                    <h2 class="forecast-header font-medium text-black mt-4">5 Day Forecast:</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="card bg-gray-300">
+                            <div id="day1" class="card-content p-4">
+                                <h3 id="date1" class="card-content"></h3>
+                                <div id="icon1"></div>
+                                <h4 id="temp1" class="has-text-black"></h4>
+                                <h4 id="hum1" class="has-text-black"></h4>
+                            </div>
+                        </div>
+                        <div class="card bg-gray-300">
+                            <div id="day2" class="card-content p-4">
+                                <h3 id="date2" class="card-content"></h3>
+                                <div id="icon2"></div>
+                                <h4 id="temp2" class="has-text-black"></h4>
+                                <h4 id="hum2" class="has-text-black"></h4>
+                            </div>
+                        </div>
+                        <div class="card bg-gray-300">
+                            <div id="day3" class="card-content p-4">
+                                <h3 id="date3" class="card-content"></h3>
+                                <div id="icon3"></div>
+                                <h4 id="temp3" class="has-text-black"></h4>
+                                <h4 id="hum3" class="has-text-black"></h4>
+                            </div>
+                        </div>
+                        <div class="card bg-gray-300">
+                            <div id="day4" class="card-content p-4">
+                                <h3 id="date4" class="card-content"></h3>
+                                <div id="icon4"></div>
+                                <h4 id="temp4" class="has-text-black"></h4>
+                                <h4 id="hum4" class="has-text-black"></h4>
+                            </div>
+                        </div>
+                        <div class="card bg-gray-300">
+                            <div id="day5" class="card-content p-4">
+                                <h3 id="date5" class="card-content"></h3>
+                                <div id="icon5"></div>
+                                <h4 id="temp5" class="has-text-black"></h4>
+                                <h4 id="hum5" class="has-text-black"></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Script elements-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="assets/script.js"></script>
+
 </body>
+
 </html>
