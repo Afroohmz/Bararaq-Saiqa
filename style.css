@@ -1,0 +1,44 @@
+/* style.css */
+
+body {
+    background-color: #f0f8ff; /* light blue background */
+    color: #ffffff; /* white text */
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .weather-card {
+    background-color: #6495ed; /* light blue card background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .weather-card h2 {
+    font-size: 24px;
+  }
+  
+  .weather-card img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .weather-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .weather-details p {
+    margin: 5px 0;
+  }
+  
